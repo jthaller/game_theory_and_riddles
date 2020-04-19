@@ -7,7 +7,7 @@ import %timeit
 
 rand_array = np.random.randint(1,101,40)
 print(rand_array)
-
+#----------------------------------------------------------------------------------------------------------
 #1. Bubble Sort, Recursive
 # Time Complexity: Best O(n), Avg O(n^2) = worst
 # Space Complexity: O(n)
@@ -42,6 +42,24 @@ def bubble_sort2(arr):
     return arr
 
 bubble_sort2(rand_array)
-
+# compare time for recursive verse non recursive bubble_sort
 %timeit bubble_sort(rand_array)
 %timeit bubble_sort2(rand_array)
+
+#----------------------------------------------------------------------------------------------------------
+# Insertion Sort
+def insertion_sort(array):
+    i=1
+    for i in range(len(array)):
+        key = array[i]
+        j = i - 1
+        while j >= 0 and key < array[j]:
+            array[j+1] = array[j]
+            j -= 1
+        array[j+1] = key
+    return array
+
+
+insertion_sort(rand_array)
+
+%timeit insertion_sort(rand_array)
