@@ -48,6 +48,8 @@ bubble_sort2(rand_array)
 
 #----------------------------------------------------------------------------------------------------------
 # Insertion Sort
+# Time Complexity: Best = O(n), avg = worst = O(n^2)
+# Space Complexity: O(1)
 def insertion_sort(array):
     i=1
     for i in range(len(array)):
@@ -61,5 +63,7 @@ def insertion_sort(array):
 
 
 insertion_sort(rand_array)
-
 %timeit insertion_sort(rand_array)
+
+#----------------------------------------------------------------------------------------------------------
+# Merge Sort
