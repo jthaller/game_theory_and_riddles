@@ -128,7 +128,7 @@ print("\nGreatest Correlation is with the mean height of parents")
 ## QUIZ
 import pandas as pd
 URL = 'http://users.stat.ufl.edu/~winner/data/pgalpga2008.dat'
-df = pd.read_table(URL, delimiter='    ', names = ['avg_drive', 'acc_fairway', 'sex'])
+df = pd.read_table(URL, delimiter=r"\s+", names = ['avg_drive', 'acc_fairway', 'sex'])
 men = df[df['sex'] == 2]
 women = df[df['sex'] == 1]
 men.head()
@@ -182,6 +182,7 @@ print(f"y={predict_woman(260)}")
 # gives a 95% posterior predictive interval for 
 # the driving accuracy of a new female golfer whose 
 # average driving distance is x=260x=260 yards
+# this didn't match with the quiz answer for some reason
 from scipy import stats                                                                     
 n = women.avg_drive.size # counts                                                                                        
 p = 2 # variables
